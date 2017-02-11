@@ -1,5 +1,5 @@
 #The Chrd Chord Chart Editor
-[www.chrd.co.uk](www.chrd.co.uk)
+[www.chrd.co.uk](https://www.chrd.co.uk)
 
 Chrd is a markup language and text editor for typesetting chord charts.
 
