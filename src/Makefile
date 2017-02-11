@@ -7,7 +7,7 @@
 # - evince
 
 CPPSRC = $(wildcard *.cpp) $(wildcard csscolorparser/*.cpp)
-CSRC = $(wildcard *.c)
+CSRC = $(wildcard *.c) $(wildcard xxhash/*.c)
 OBJ = $(CPPSRC:.cpp=.o) $(CSRC:.c=.o)
 TARGET = chrd
 

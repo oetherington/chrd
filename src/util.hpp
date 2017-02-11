@@ -25,7 +25,7 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
-#include "xxhash.h"
+#include "xxhash/xxhash.h"
 #include <string>
 #include <cstdarg>
 #include <cstdio>
