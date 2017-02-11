@@ -1,6 +1,13 @@
 body {
-	background-color: #444;
-	background: linear-gradient(#414246, #454649);
+	#background: linear-gradient(#414246, #454649);
+	background-color: #ddd;
+}
+
+#forkme {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
 }
 
 #container {
@@ -15,17 +22,18 @@ body {
 	background-color: #001b33;
 	color: #ff9d00;
 	padding: 0.1em 2em 0.1em 2em;
-	-webkit-border-radius: 3px 3px 0px 0px;
-	-moz-border-radius: 3px 3px 0px 0px;
-	border-radius: 3px 3px 0px 0px;
+	#-webkit-border-radius: 3px 3px 0px 0px;
+	#-moz-border-radius: 3px 3px 0px 0px;
+	#border-radius: 3px 3px 0px 0px;
 }
 
 #header table {
 	border: none;
+	margin-left: -0.3em;
 }
 
 #header td {
-	padding: 0em 1em;
+	padding-right: 1em;
 }
 
 #logo {
@@ -37,10 +45,11 @@ body {
 
 #box {
 	padding: 0.5em 2em 2em 2em;
-	background-color: #e5e5e5;
-	-webkit-border-radius: 0px 0px 3px 3px;
-	-moz-border-radius: 0px 0px 3px 3px;
-	border-radius: 0px 0px 3px 3px;
+	#background-color: #e5e5e5;
+	background-color: #fff;
+	#-webkit-border-radius: 0px 0px 3px 3px;
+	#-moz-border-radius: 0px 0px 3px 3px;
+	#border-radius: 0px 0px 3px 3px;
 	border-top: solid 1px #a8093e;
 }
 
