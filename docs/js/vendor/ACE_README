@@ -1,0 +1,9 @@
+Chordlet uses a custom build of Ace:
+
+git clone https://github.com/o-jay/ace.git
+cd ace
+sudo apt-get install node npm
+sudo npm install
+nodejs ./Makefile.dryice.js -m
+
+The distribution files are now in build/src-min
