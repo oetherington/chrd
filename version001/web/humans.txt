@@ -1,0 +1,12 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Ollie Etherington -- Developer -- www.ojay.co.uk
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    HTML5 Boilerplate, Apache Server Configs, jQuery, Modernizr, Normalize.css
+    jsPDF, Google WebFontLoader, RequireJS, Ace editor/syntax highlighter

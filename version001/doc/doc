@@ -1,0 +1,185 @@
+BARS
+
+COMMENTS
+
+TYPES
+bool
+int
+string
+float?
+void
+
+PRAGMAS
+#version - string
+The version string. Currently only "0.0.1" is supported.
+
+#title - string
+Inserts a title at the current position in the document. Note that the final
+title provided is the default document name.
+
+#subtitle - string
+Not yet implemented.
+
+#author - string
+Inserts a right justified author name at the current position in the document.
+
+#copyright - string
+Inserts a copyright string at the end of the document. Any instances of "(C)"
+or "(c)" in the string will be replaced will the copyright symbol (Unicode
+#00a9). For the exact positioning of the copyright string, see #lock_copyright.
+
+#label - string
+Inserts the string verbatim as a label at the current position in the document.
+
+#label_at - int int string
+Inserts the string verbatim as a label at position (x, y) in the document.
+
+#start - void
+// TODO
+
+#break - void
+Inserts a small break in the document at the current position.
+
+#include - void
+Not yet implemented.
+
+#comment_delim - string
+Specify the delimiter for comments (default "!").
+
+#background - string
+Specify the background color as a hexadecmial string (default "#fff").
+
+#color - string
+Specify the color for everything drawn on the page as a hexadecimal string
+(default "#000").
+
+#draw_barlines - bool
+Whether or not bar lines should be drawn.
+
+#barline_padding - int
+The amount of padding between barlines and the first chord in each bar (default
+8).
+
+#barline_spacing - int
+The distance between lines in any barline with more than one line (ie; ending
+barlines, repeat barlines, etc.). Default 1.
+
+#barline_width - int
+The width of single barlines (default 1).
+
+#final_barline_width - int
+The width of the wider line if final barlines and repeat barlines (default 2).
+
+#margin_top - int
+The margin at the top of the page (default 14).
+
+#margin_right - int
+The margin at the right of the page (default 22).
+
+#margin_bottom - int
+The margin at the bottom of the page (default 22).
+
+#margin_left - int
+The margin at the left of the page (default 25).
+
+#text_font - string
+The font used for all text (default "Arial").
+
+#chord_font - string
+The font used for all chords (default "ChordletType").
+
+#chord_size - int
+The size of all chords (default 14).
+
+#label_size - int
+The size of all labels (default 12).
+
+#title_size - int
+The size of all titles (default 20).
+
+#subtitle_size - int
+The size of all subtitles (default 14).
+
+#author_size - int
+The size of all authors (default 12).
+
+#copyright_size - int
+The size of the copyright string (default 8).
+
+#first_offset - int
+The size of the offset applied above the first system. This is the offset that
+is also applied by #start. Default 4.
+
+#system_offset - int
+The distance between systems (default 14).
+
+#label_offset - int
+The offset applied underneath each label (default 10).
+
+#break_size - int
+The size of each break (default 10).
+
+#lock_copyright - bool
+When true the copyright string is locked to the bottom of the page. When false
+the copyright string is placed directly after the end of the last element in
+the document (default true).
+
+#use_final_barline - bool
+Whether or not to insert a final barline at the end of the last bar (default
+true).
+
+#stroke_width
+
+#push_offset
+
+#push_width
+
+#push_height
+
+#ring_x_offset
+
+#ring_y_offset
+
+#ring_x_margin
+
+#ring_y_margin
+
+#choke_offset
+
+#choke_width
+
+#choke_height
+
+#pause_y_offset
+
+#pause_line_radius
+
+#pause_dot_radius
+
+
+
+#key
+
+#key_size
+
+#key_offset
+
+#key_padding
+
+#key_box
+
+#key_box_width
+
+#tempo
+
+#tempo_size
+
+#tempo_break
+
+#push
+The following are not pushed: comment_delim, background_color, lock_copyright,
+use_final_barline, key_box, title, subtitle, author, copyright, key,
+title_size, subtitle_size, author_size, copyright_size, key_size, key_offset,
+key_padding, key_box_width, first_line_offset
+
+#pop

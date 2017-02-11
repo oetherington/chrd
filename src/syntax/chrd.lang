@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Part of the Chrd chord editor
+ * http://www.github.com/oetherington/chrd
+ *
+ * Copyright 2016 Ollie Etherington.
+ * All Rights Reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+-->
+<language id="chrd" _name="Chrd" version="2.0" _section="Source">
+  <metadata>
+    <property name="mimetypes">text/x-chrd</property>
+    <property name="globs">*.chrd</property>
+  </metadata>
+  <styles>
+    <style id="comment" _name="Comment" map-to="def:comment"/>
+    <style id="string" _name="String" map-to="def:string"/>
+    <style id="escaped-character" _name="Escaped Character" map-to="def:special-char"/>
+    <style id="pragma" _name="Pragma" map-to="def:keyword"/>
+    <style id="barline" _name="Barline" map-to="def:floating-point"/>
+    <style id="decimal" _name="Decimal" map-to="def:type"/>
+  </styles>
+  <definitions>
+    <context id="chrd">
+      <include>
+
+        <context id="comment" style-ref="comment">
+          <start>!</start>
+          <end>$</end>
+        </context>
+
+<!--
+        <context id="comment-multiline" style-ref="comment">
+          <start>\/\*</start>
+          <end>\*\/</end>
+          <include>
+            <context ref="def:in-comment"/>
+          </include>
+        </context>
+-->
+
+		<context id="string" end-at-line-end="true" style-ref="string">
+          <start>"</start>
+          <end>"</end>
+          <include>
+            <context id="escape" style-ref="escaped-character">
+              <match>\\.</match>
+            </context>
+          </include>
+        </context>
+
+		<context id="pragma" style-ref="pragma">
+          <prefix>^#</prefix>
+		  <keyword>version</keyword>
+		  <keyword>title</keyword>
+		  <keyword>subtitle</keyword>
+		  <keyword>author</keyword>
+		  <keyword>copyright</keyword>
+		  <keyword>label</keyword>
+		  <keyword>label_at</keyword>
+		  <keyword>start</keyword>
+		  <keyword>break</keyword>
+		  <keyword>include</keyword>
+		  <keyword>comment_delim</keyword>
+          <keyword>draw_barlines</keyword>
+		  <keyword>barline_padding</keyword>
+		  <keyword>barline_spacing</keyword>
+		  <keyword>barline_width</keyword>
+		  <keyword>final_barline_width</keyword>
+		  <keyword>margin_top</keyword>
+		  <keyword>margin_right</keyword>
+		  <keyword>margin_bottom</keyword>
+		  <keyword>margin_left</keyword>
+		  <keyword>text_font</keyword>
+		  <keyword>chord_font</keyword>
+		  <keyword>chord_size</keyword>
+		  <keyword>label_size</keyword>
+		  <keyword>title_size</keyword>
+		  <keyword>subtitle_size</keyword>
+		  <keyword>author_size</keyword>
+		  <keyword>copyright_size</keyword>
+		  <keyword>first_offset</keyword>
+		  <keyword>system_offset</keyword>
+		  <keyword>label_offset</keyword>
+		  <keyword>break_size</keyword>
+		  <keyword>lock_copyright</keyword>
+		  <keyword>use_final_barline</keyword>
+		  <keyword>stroke_width</keyword>
+		  <keyword>push_offset</keyword>
+		  <keyword>push_width</keyword>
+		  <keyword>push_height</keyword>
+		  <keyword>ring_x_offset</keyword>
+		  <keyword>ring_y_offset</keyword>
+		  <keyword>ring_x_margin</keyword>
+		  <keyword>ring_y_margin</keyword>
+		  <keyword>choke_offset</keyword>
+		  <keyword>choke_width</keyword>
+		  <keyword>choke_height</keyword>
+		  <keyword>pause_y_offset</keyword>
+		  <keyword>pause_line_radius</keyword>
+		  <keyword>pause_dot_radius</keyword>
+		  <keyword>push</keyword>
+		  <keyword>pop</keyword>
+		  <keyword>background</keyword>
+		  <keyword>color</keyword>
+		  <keyword>key</keyword>
+		  <keyword>key_size</keyword>
+		  <keyword>key_offset</keyword>
+		  <keyword>key_padding</keyword>
+		  <keyword>key_box</keyword>
+		  <keyword>key_box_width</keyword>
+		  <keyword>tempo</keyword>
+		  <keyword>tempo_size</keyword>
+		  <keyword>tempo_break</keyword>
+        </context>
+
+		<context id="barline" style-ref="barline">
+          <match>[\\|\\|\\|\\|\\|:\\|:\\\\\\|\\\\:\\|:\\|\\|:\\|\\\\]</match>
+        </context>
+
+		<context id="decimal" style-ref="decimal">
+		  <match extended="true">
+			  [+-]?[0-9]+(\.[0-9]+(\.[0-9]+)?)?
+		  </match>
+		</context>
+
+      </include>
+    </context>
+  </definitions>
+</language>

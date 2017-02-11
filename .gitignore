@@ -1,0 +1,9 @@
+chrd
+*.o
+*.a
+*.so
+*.dll
+~*
+*.pdf
+*.inc
+test*

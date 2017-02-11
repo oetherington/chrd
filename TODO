@@ -1,0 +1,31 @@
+UI
+	Printing
+	Print preview
+	Zoom
+	Preferences
+	Preference serialization and saving
+	Help message
+	Syntax highlighting selection
+		Off
+		Automatic
+		Version 0.0.1
+		Version 0.0.2
+	Fix fullscreen
+
+General
+	Transpose
+
+Version 0.0.1
+	Sanner defaults
+	Repeat numbers
+
+Version 0.0.2
+	multiple pages
+	images
+	bar width percentages
+	labels on specific bars
+	rhythm notation
+	segnos/codas
+	first/second time endings
+
+Graphical mode
