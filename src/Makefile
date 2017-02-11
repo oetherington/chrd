@@ -80,3 +80,9 @@ run: $(TARGET)
 
 runv: $(TARGET)
 	valgrind ./$(TARGET)
+
+install: $(TARGET)
+	cp $(TARGET) /usr/bin
+
+uninstall:
+	rm -f /usr/bin/$(TARGET)
