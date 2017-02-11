@@ -1,0 +1,14 @@
+#container {
+	max-width: 80%;
+}
+
+#box {
+	padding: 0.5em 2em 2em 2em;
+	background-color: #eee;
+	border-top: solid 1px #a8093e;
+}
+
+#cl_entry {
+	float: left;
+	margin-right: 1em;
+}

@@ -1,5 +1,4 @@
 body {
-	#background: linear-gradient(#414246, #454649);
 	background-color: #ddd;
 }
 
@@ -14,7 +13,7 @@ body {
 	-webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.75);
-	max-width: 60%;
+	max-width: 70%;
 	margin: 0em auto;
 }
 
@@ -22,9 +21,6 @@ body {
 	background-color: #001b33;
 	color: #ff9d00;
 	padding: 0.1em 2em 0.1em 2em;
-	#-webkit-border-radius: 3px 3px 0px 0px;
-	#-moz-border-radius: 3px 3px 0px 0px;
-	#border-radius: 3px 3px 0px 0px;
 }
 
 #header table {
@@ -43,13 +39,23 @@ body {
 	max-height: 3em;
 }
 
+#nav {
+	border-top: solid 1px #a8093e;
+	border-bottom: solid 1px #a8093e;
+	padding: 0em 2em 0em 2em;
+}
+
+#nav a {
+	margin-right: 3em;
+}
+
+#nav .selected {
+
+}
+
 #box {
 	padding: 0.5em 2em 2em 2em;
-	#background-color: #e5e5e5;
 	background-color: #fff;
-	#-webkit-border-radius: 0px 0px 3px 3px;
-	#-moz-border-radius: 0px 0px 3px 3px;
-	#border-radius: 0px 0px 3px 3px;
 	border-top: solid 1px #a8093e;
 }
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Chrd</title>
+        <title>Chrd - Legacy Editor</title>
         <meta name="description" content="The Chrd Chord Editor">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,28 +32,9 @@
 				</table>
 			</div>
 
-			<!--
-			<div id="nav">
-				<table>
-					<tr>
-						<td><a class="selected" href="index.htm">Home</a></td>
-						<td><a href="about.htm">About</a></td>
-						<td><a href="download.htm">Download</a></td>
-					</tr>
-				</table>
-			</div>
-			-->
-
 			<div id="box">
 				<div id="content">
-					<p>Chrd is a markup language and text editor for typesetting
-					chord charts. It is free software under the GNU General Public
-					License Version 3.</p>
-					<p>Chrd development is managed on <a href="https://github.com/oetherington/chrd">Github</a>.</p>
-					<p>Before becoming a native application, Chrd was originally
-					a web app. The legacy version may be accessed
-					<a href="legacy.htm">here</a> but is no longer supported.</p>
-					<img src="img/examples/ex1.png" width=100% />
+					<div id="cl_container"></div>
 				</div>
 				<div id="footer">Copyright &copy; 2017 Ollie Etherington</div>
 			</div>
@@ -61,8 +42,17 @@
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+		<script src="js/vendor/webfontloader.js"></script>
+        <script src="js/vendor/jspdf.min.js"></script>
+        <script src="js/vendor/require.min.js"></script>
+		<script src="js/vendor/ace/ace.js"></script>
+        <script src="js/chordlet.js"></script>
+
+		<link rel="stylesheet" href="css/legacy.css">
 
         <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

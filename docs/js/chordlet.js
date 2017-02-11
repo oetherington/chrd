@@ -1205,7 +1205,7 @@ function run() {
 	$("#cl_entry").css({
 		"width": "49%",
 		"height": web_height + "px",
-		"font-size": "1em"
+		"font-size": "0.8em"
 	});
 
 	var editor = ace.edit("cl_entry");
