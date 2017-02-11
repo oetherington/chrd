@@ -3,7 +3,7 @@
 
 # TEAM
 
-	Ollie Etherington -- Developer -- www.ojay.co.uk
+	Ollie Etherington -- Developer
 
 # TECHNOLOGY COLOPHON
 
