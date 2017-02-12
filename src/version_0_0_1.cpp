@@ -25,6 +25,8 @@
 #include "util.hpp"
 #include "font.hpp"
 #include "data.hpp"
+#include "chord.hpp"
+#include "vec2.hpp"
 #include <vector>
 #include <stack>
 #include <cctype>
@@ -32,16 +34,6 @@
 #include <cassert>
 #include <hpdf.h>
 #include "hpdf_contrib.hpp"
-
-struct Vec2 {
-	HPDF_REAL x;
-	HPDF_REAL y;
-
-	Vec2(HPDF_REAL x, HPDF_REAL y)
-		: x(x)
-		, y(y)
-	{}
-};
 
 enum class Barline {
 	Single,
@@ -66,109 +58,6 @@ struct Bar {
 	Bar() {}
 
 	inline void push_back(std::string c) { chords.push_back(c); }
-};
-
-#define PUSH_CH '>'
-#define RING_CH 'R'
-#define CHOKE_CH 'K'
-#define PAUSE_CH 'P'
-
-struct Chord {
-	std::string data = "";
-	bool push = false;
-	bool ring = false;
-	bool choke = false;
-	bool pause = false;
-
-	Chord(const std::string &c)
-	{
-		data.reserve(c.size());
-
-		bool has_accidental = false;
-
-		for (size_t i = 0; i < c.size(); ++i) {
-			switch (c[i]) {
-			case PUSH_CH:		push = true;		break;
-			case RING_CH:		ring = true;		break;
-			case CHOKE_CH:		choke = true;		break;
-			case PAUSE_CH:		pause = true;		break;
-
-			case 'b':
-				if (has_accidental) {
-					data += Font::superflat;
-				} else {
-					has_accidental = true;
-					data += Font::flat;
-				}
-				break;
-
-			case '#':
-				if (has_accidental) {
-					data += Font::supersharp;
-				} else {
-					has_accidental = true;
-					data += Font::sharp;
-				}
-				break;
-
-			case '/':
-				has_accidental = false;
-				data += '/';
-				break;
-
-			case 'n':	data += Font::natural;		break;
-			case 'o':	data += Font::superdim0;	break;
-			case '+':	data += Font::aug;			break;
-			case '^':	data += Font::maj7;			break;
-			case '-':	data += Font::min7;			break;
-			case '@':	data += Font::halfdim;		break;
-			case '5':	data += Font::super5;		break;
-			case '6':	data += Font::super6;		break;
-			case '7':	data += Font::super7;		break;
-			case '9':	data += Font::super9;		break;
-			case 'S':	data += Font::crotchetr;	break;
-
-			case 's':
-				if (i + 1 < c.size() && c[i + 1] == '4') {
-					data += Font::sus4;
-					++i;
-				} else {
-					data += Font::sus;
-				}
-				break;
-
-			default:
-				if (!c.compare(i, 2, "11")) {
-					data += Font::eleven;
-					++i;
-				} else if (!c.compare(i, 2, "13")) {
-					data += Font::thirteen;
-					++i;
-				} else if (!c.compare(i, 3, "dim")) {
-					data += Font::dim;
-					i += 2;
-				} else if (!c.compare(i, 5, "add11")) {
-					data += Font::add11;
-					i += 4;
-				} else if (!c.compare(i, 3, "add")) {
-					data += Font::add;
-					i += 2;
-				} else if (!c.compare(i, 3, "%%%")) {
-					data += Font::simile3;
-					i += 2;
-				} else if (!c.compare(i, 2, "%%")) {
-					data += Font::simile2;
-					++i;
-				} else if (c[i] == '%') {
-					data += Font::simile;
-				} else {
-					data += c[i];
-				}
-
-				break;
-			}
-		}
-	}
 };
 
 enum class Param {
@@ -1055,10 +944,8 @@ public:
 
 		HPDF_UseUTFEncodings(m_pdf);
 
-		/* m_arial = HPDF_LoadTTFontFromBuffer(m_pdf, */
-				/* fonts_Arial_ttf, fonts_Arial_ttf_len, */
-				/* HPDF_TRUE); */
 		m_arial = HPDF_LoadTTFontFromBuffer(m_pdf,
+				/* fonts_Arial_ttf, fonts_Arial_ttf_len, */
 				fonts_Roboto_Regular_ttf, fonts_Roboto_Regular_ttf_len,
 				HPDF_TRUE);
 		m_chordlet_type = HPDF_LoadTTFontFromBuffer(m_pdf,
