@@ -1,13 +1,5 @@
-# Dependencies:
-# - libharu (an up to date version, probably from source, to enable utf-8)
-# - libz
-# - libpng
-# - gtk3
-# - gtksourceview
-# - evince
-
 CPPSRC = $(wildcard *.cpp) $(wildcard csscolorparser/*.cpp)
-CSRC = $(wildcard *.c) $(wildcard xxhash/*.c)
+CSRC = $(wildcard *.c) $(wildcard xxhash/*.c) $(wildcard hpdf/*.c)
 OBJ = $(CPPSRC:.cpp=.o) $(CSRC:.c=.o)
 TARGET = chrd
 
@@ -37,8 +29,7 @@ CC = clang
 CFLAGS = $(COMMONFLAGS) -std=c99 -Wno-unused-function
 
 LD = clang++
-LDFLAGS = -lm -lpthread /usr/local/lib/libhpdf.a -lz \
-		  $(shell pkg-config --libs $(LIBS))
+LDFLAGS = -lm -lpthread -lpng -lz $(shell pkg-config --libs $(LIBS))
 
 .PHONY: $(TARGET) clean run
 
@@ -72,8 +63,13 @@ $(TARGET): $(FONTDATA) $(ICONDATA) $(LANGDATA) $(DUMMYDATA) $(OBJ)
 %.inc: %.pdf
 	xxd -i $< > $@
 
+$(HPDF): get-deps
+
 clean:
 	rm -rf $(OBJ) $(TARGET) $(FONTDATA) $(ICONDATA) $(LANGDATA) $(DUMMYDATA)
+
+cleanall: clean
+	rm -rf deps
 
 run: $(TARGET)
 	./$(TARGET)

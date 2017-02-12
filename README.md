@@ -4,8 +4,7 @@
 Chrd is a markup language and text editor for typesetting chord charts.
 
 ##BUILDING
-Building requires libharu (an up to date version, probably built from source to
-enable UTF8), libz, libpng, gtk3, gtksourceview, evince, clang, make and xxd.
+Building requires libz, libpng, gtk3, gtksourceview, evince, clang, make and xxd.
 With these dependencies installed, Chrd may then be built simply by running
 `make`. It can then by installed with `sudo make install` and, if needed,
 uninstalled with `sudo make uninstall`.
