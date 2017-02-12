@@ -20,7 +20,7 @@ LIBS = gtk+-3.0 evince-view-3.0 gtksourceview-3.0 gtk+-unix-print-3.0
 
 COMMONFLAGS = -c -O3 -Wall -Wno-unused-parameter -D_GNU_SOURCE \
 			  -D_FORTIFY_SOURCE=1 -I/usr/include/evince/3.0/ \
-			  $(shell pkg-config --cflags $(LIBS))
+			  $(shell pkg-config --cflags $(LIBS)) -Ihpdf/include
 
 CXX = clang++
 CXXFLAGS = $(COMMONFLAGS) -std=c++14
