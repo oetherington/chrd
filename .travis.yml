@@ -1,0 +1,8 @@
+script: make
+
+notifications:
+  email:
+    recipients:
+      - ollie.etherington@gmail.com
+    on_success: never
+    on_failure: always
