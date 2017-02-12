@@ -4,6 +4,6 @@ chrd
 *.so
 *.dll
 ~*
-*.pdf
 *.inc
 test*
+src/deps
