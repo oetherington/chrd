@@ -23,7 +23,7 @@ COMMONFLAGS = -c -O3 -Wall -Wno-unused-parameter -D_GNU_SOURCE \
 			  $(shell pkg-config --cflags $(LIBS)) -Ihpdf/include
 
 CXX = clang++
-CXXFLAGS = $(COMMONFLAGS) -std=c++14
+CXXFLAGS = $(COMMONFLAGS) -std=c++11
 
 CC = clang
 CFLAGS = $(COMMONFLAGS) -std=c99 -Wno-unused-function
