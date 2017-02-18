@@ -6,3 +6,5 @@ chrd
 ~*
 *.inc
 test*
+vgcore*
+*.ws
