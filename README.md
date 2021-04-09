@@ -1,5 +1,6 @@
 # The Chrd Chord Chart Editor
-[chrd.etherington.xyz](http://chrd.etherington.xyz)
+
+[Chrd](https://www.etherington.xyz/chrd)
 
 Chrd is a markup language and text editor for typesetting chord charts.
 
